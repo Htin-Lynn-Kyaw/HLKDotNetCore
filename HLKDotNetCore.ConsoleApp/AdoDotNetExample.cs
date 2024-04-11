@@ -33,14 +33,12 @@ namespace HLKDotNetCore.ConsoleApp
 
             connection.Close();
             Console.WriteLine("Connection Close.");
+            Console.WriteLine("| {0,-3} | {1,-10} | {2,-10} | {3,-10} |", "ID", "Title", "Author", "Content");
+            Console.WriteLine(new string('-', 47));
 
             foreach (DataRow dr in dt.Rows)
             {
-                Console.WriteLine("Blog ID      ==> " + dr[0]);
-                Console.WriteLine("Blog Title   ==> " + dr[1]);
-                Console.WriteLine("Blog Author  ==> " + dr[2]);
-                Console.WriteLine("Blog Content ==> " + dr[3]);
-                Console.WriteLine("--------------------------");
+                Console.WriteLine("| {0,-3} | {1,-10} | {2,-10} | {3,-10} |", dr[0], dr[1], dr[2], dr[3]);
             }
         }
         public void Create(string title, string author, string content)
@@ -126,12 +124,8 @@ namespace HLKDotNetCore.ConsoleApp
             connection.Close();
             DataRow dr= dt.Rows[0];
             Console.WriteLine("Connection Close.");
-
-            Console.WriteLine("Blog ID      ==> " + dr[0]);
-            Console.WriteLine("Blog Title   ==> " + dr[1]);
-            Console.WriteLine("Blog Author  ==> " + dr[2]);
-            Console.WriteLine("Blog Content ==> " + dr[3]);
-            Console.WriteLine("--------------------------");
+            Console.WriteLine("| {0,-3} | {1,-10} | {2,-10} | {3,-10} |", "ID", "Title", "Author", "Content");
+            Console.WriteLine("| {0,-3} | {1,-10} | {2,-10} | {3,-10} |", dr[0], dr[1], dr[2], dr[3]);
 
         }
     }
