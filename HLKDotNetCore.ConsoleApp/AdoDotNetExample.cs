@@ -11,6 +11,7 @@ namespace HLKDotNetCore.ConsoleApp
 {
     internal class AdoDotNetExample
     {
+        private readonly int _maxColumnWidth = 20;
         private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
             DataSource = "DESKTOP-2A3IE1L\\SQLEXPRESS",
@@ -21,7 +22,6 @@ namespace HLKDotNetCore.ConsoleApp
         public void Read()
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
-
             connection.Open();
             Console.WriteLine("Connection Open.");
 
@@ -33,13 +33,20 @@ namespace HLKDotNetCore.ConsoleApp
 
             connection.Close();
             Console.WriteLine("Connection Close.");
-            Console.WriteLine("| {0,-3} | {1,-10} | {2,-10} | {3,-10} |", "ID", "Title", "Author", "Content");
-            Console.WriteLine(new string('-', 47));
 
-            foreach (DataRow dr in dt.Rows)
+            #region Tabular Form
+            Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |", "ID", "Title", "Author", "Content");
+            Console.WriteLine(new string('-', (_maxColumnWidth + 4) * 4));
+            foreach (DataRow row in dt.Rows)
             {
-                Console.WriteLine("| {0,-3} | {1,-10} | {2,-10} | {3,-10} |", dr[0], dr[1], dr[2], dr[3]);
+                Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |",
+                        row[0].ToString().Substring(0, Math.Min(_maxColumnWidth, row[0].ToString().Length)),
+                        row[1].ToString().Substring(0, Math.Min(_maxColumnWidth, row[1].ToString().Length)),
+                        row[2].ToString().Substring(0, Math.Min(_maxColumnWidth, row[2].ToString().Length)),
+                        row[3].ToString().Substring(0, Math.Min(_maxColumnWidth, row[3].ToString().Length)));
             }
+            #endregion
+
         }
         public void Create(string title, string author, string content)
         {
@@ -104,7 +111,6 @@ namespace HLKDotNetCore.ConsoleApp
         public void Edit(int id)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
-
             connection.Open();
             Console.WriteLine("Connection Open.");
 
@@ -122,11 +128,18 @@ namespace HLKDotNetCore.ConsoleApp
             }
 
             connection.Close();
-            DataRow dr= dt.Rows[0];
+            DataRow row= dt.Rows[0];
             Console.WriteLine("Connection Close.");
-            Console.WriteLine("| {0,-3} | {1,-10} | {2,-10} | {3,-10} |", "ID", "Title", "Author", "Content");
-            Console.WriteLine("| {0,-3} | {1,-10} | {2,-10} | {3,-10} |", dr[0], dr[1], dr[2], dr[3]);
 
+            #region Tabular Form
+            Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |", "ID", "Title", "Author", "Content");
+            Console.WriteLine(new string('-', (_maxColumnWidth + 4) * 4));
+            Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |",
+                        row[0].ToString().Substring(0, Math.Min(_maxColumnWidth, row[0].ToString().Length)),
+                        row[1].ToString().Substring(0, Math.Min(_maxColumnWidth, row[1].ToString().Length)),
+                        row[2].ToString().Substring(0, Math.Min(_maxColumnWidth, row[2].ToString().Length)),
+                        row[3].ToString().Substring(0, Math.Min(_maxColumnWidth, row[3].ToString().Length)));
+            #endregion
         }
     }
 }
