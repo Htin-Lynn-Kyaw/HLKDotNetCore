@@ -1,5 +1,5 @@
 ﻿using HLKDotNetCore.ConsoleApp;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 bool programStatus = true;
 while(programStatus)
 {

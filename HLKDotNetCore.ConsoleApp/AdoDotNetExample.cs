@@ -11,6 +11,7 @@ namespace HLKDotNetCore.ConsoleApp
 {
     internal class AdoDotNetExample
     {
+        #region Global Properties
         private readonly int _maxColumnWidth = 20;
         private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
@@ -19,6 +20,9 @@ namespace HLKDotNetCore.ConsoleApp
             UserID = "sa",
             Password = "sasa"
         };
+        #endregion
+
+        #region Read
         public void Read()
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
@@ -48,6 +52,9 @@ namespace HLKDotNetCore.ConsoleApp
             #endregion
 
         }
+        #endregion
+
+        #region Create
         public void Create(string title, string author, string content)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
@@ -66,12 +73,14 @@ namespace HLKDotNetCore.ConsoleApp
             cmd.Parameters.AddWithValue("@BlogAuthor", author);
             cmd.Parameters.AddWithValue("@BlogContent", content);
             int result = cmd.ExecuteNonQuery();
-            
+
             connection.Close();
             string message = result > 0 ? "Insert Successful" : "Insert Failed";
             Console.WriteLine(message);
         }
+        #endregion
 
+        #region Update
         public void Update(int id, string title, string author, string content)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
@@ -93,6 +102,9 @@ namespace HLKDotNetCore.ConsoleApp
             string message = result > 0 ? "Updating Successful" : "Updating Failed";
             Console.WriteLine(message);
         }
+        #endregion
+
+        #region Delete
         public void Delete(int id)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
@@ -108,6 +120,9 @@ namespace HLKDotNetCore.ConsoleApp
             string message = result > 0 ? "Deleting Successful" : "Deleting Failed";
             Console.WriteLine(message);
         }
+        #endregion
+
+        #region Edit
         public void Edit(int id)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
@@ -121,14 +136,14 @@ namespace HLKDotNetCore.ConsoleApp
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 
-            if(dt.Rows.Count == 0)
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No Data Found!");
                 return;
             }
 
             connection.Close();
-            DataRow row= dt.Rows[0];
+            DataRow row = dt.Rows[0];
             Console.WriteLine("Connection Close.");
 
             #region Tabular Form
@@ -141,5 +156,6 @@ namespace HLKDotNetCore.ConsoleApp
                         row[3].ToString().Substring(0, Math.Min(_maxColumnWidth, row[3].ToString().Length)));
             #endregion
         }
+        #endregion
     }
 }
