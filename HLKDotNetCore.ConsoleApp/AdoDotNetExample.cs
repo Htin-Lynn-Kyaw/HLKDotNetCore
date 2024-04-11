@@ -41,14 +41,18 @@ namespace HLKDotNetCore.ConsoleApp
             #region Tabular Form
             Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |", "ID", "Title", "Author", "Content");
             Console.WriteLine(new string('-', (_maxColumnWidth + 4) * 4));
-            foreach (DataRow row in dt.Rows)
+            if (dt.Rows.Count > 0)
             {
-                Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |",
-                        row[0].ToString().Substring(0, Math.Min(_maxColumnWidth, row[0].ToString().Length)),
-                        row[1].ToString().Substring(0, Math.Min(_maxColumnWidth, row[1].ToString().Length)),
-                        row[2].ToString().Substring(0, Math.Min(_maxColumnWidth, row[2].ToString().Length)),
-                        row[3].ToString().Substring(0, Math.Min(_maxColumnWidth, row[3].ToString().Length)));
+                foreach (DataRow row in dt.Rows)
+                {
+                    Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |",
+                            row[0].ToString().Substring(0, Math.Min(_maxColumnWidth, row[0].ToString().Length)),
+                            row[1].ToString().Substring(0, Math.Min(_maxColumnWidth, row[1].ToString().Length)),
+                            row[2].ToString().Substring(0, Math.Min(_maxColumnWidth, row[2].ToString().Length)),
+                            row[3].ToString().Substring(0, Math.Min(_maxColumnWidth, row[3].ToString().Length)));
+                }
             }
+
             #endregion
 
         }
@@ -149,11 +153,15 @@ namespace HLKDotNetCore.ConsoleApp
             #region Tabular Form
             Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |", "ID", "Title", "Author", "Content");
             Console.WriteLine(new string('-', (_maxColumnWidth + 4) * 4));
-            Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |",
-                        row[0].ToString().Substring(0, Math.Min(_maxColumnWidth, row[0].ToString().Length)),
-                        row[1].ToString().Substring(0, Math.Min(_maxColumnWidth, row[1].ToString().Length)),
-                        row[2].ToString().Substring(0, Math.Min(_maxColumnWidth, row[2].ToString().Length)),
-                        row[3].ToString().Substring(0, Math.Min(_maxColumnWidth, row[3].ToString().Length)));
+            if (row != null)
+            {
+                Console.WriteLine("| {0,-" + _maxColumnWidth + "} | {1,-" + _maxColumnWidth + "} | {2,-" + _maxColumnWidth + "} | {3,-" + _maxColumnWidth + "} |",
+                            row[0].ToString().Substring(0, Math.Min(_maxColumnWidth, row[0].ToString().Length)),
+                            row[1].ToString().Substring(0, Math.Min(_maxColumnWidth, row[1].ToString().Length)),
+                            row[2].ToString().Substring(0, Math.Min(_maxColumnWidth, row[2].ToString().Length)),
+                            row[3].ToString().Substring(0, Math.Min(_maxColumnWidth, row[3].ToString().Length)));
+            }
+
             #endregion
         }
         #endregion
