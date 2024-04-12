@@ -4,6 +4,7 @@ bool programStatus = true;
 while(programStatus)
 {
     AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+    string? title, author, conntent, ID;
 
     Console.WriteLine("Enter an operation....");
     string? userInput = Console.ReadLine();
@@ -14,26 +15,85 @@ while(programStatus)
             Console.WriteLine("Reading data...");
             adoDotNetExample.Read();
             break;
+
         case "create":
+
+            Console.Write("Title ==>");
+            title = Console.ReadLine();
+            Console.Write("Author ==>");
+            author = Console.ReadLine();
+            Console.Write("Content ==>");
+            conntent = Console.ReadLine();
+
             Console.WriteLine("Creating data...");
-            adoDotNetExample.Create("Java", "Mosh", "Java Web Devlopement");
+            
+            adoDotNetExample.Create(title, author, conntent);
             break;
+
         case "update":
+
+            Console.Write("ID ==>");
+            ID = Console.ReadLine();
+            Console.Write("Title ==>");
+            title = Console.ReadLine();
+            Console.Write("Author ==>");
+            author = Console.ReadLine();
+            Console.Write("Content ==>");
+            conntent = Console.ReadLine();
+
             Console.WriteLine("updating data...");
-            adoDotNetExample.Update(1, "C#", "Kumar", "Asp.net Core");
+
+            if (int.TryParse(ID, out int uNumber))
+            {
+                adoDotNetExample.Update(uNumber, title, author, conntent);
+            }
+            else
+            {
+                Console.WriteLine("ID must be number value!");
+                break;
+            }
             break;
+
         case "delete":
+
+            Console.Write("ID ==>");
+            ID = Console.ReadLine();
+
             Console.WriteLine("deleting data...");
-            adoDotNetExample.Delete(4);
+            if(int.TryParse(ID,out int dNumber))
+            {
+                adoDotNetExample.Delete(dNumber);
+            }
+            else
+            {
+                Console.WriteLine("ID must be number value!");
+                break;
+            }
             break;
+
         case "edit":
+
+            Console.Write("ID ==>");
+            ID = Console.ReadLine();
+
             Console.WriteLine("editing data...");
-            adoDotNetExample.Edit(5);
+            if (int.TryParse(ID, out int eNumber))
+            {
+                adoDotNetExample.Edit(eNumber);
+            }
+            else
+            {
+                Console.WriteLine("ID must be number value!");
+                break;
+            }
             break;
+
         case "exit":
+
             Console.WriteLine("exiting program...");
             programStatus = false;
             break;
+
         default:
             Console.WriteLine("Invalid input.\n" +
                                 "Input should be\n" +
@@ -41,9 +101,9 @@ while(programStatus)
                                 "=> create\n" +
                                 "=> update\n" +
                                 "=> delete\n" +
-                                "=> edit\n"+
+                                "=> edit\n" +
                                 "=> exit");
             break;
     }
-    Console.ReadKey();
+    //Console.ReadKey();
 }
