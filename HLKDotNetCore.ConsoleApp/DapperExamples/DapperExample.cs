@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using HLKDotNetCore.ConsoleApp.Dtos;
+using HLKDotNetCore.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +10,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HLKDotNetCore.ConsoleApp
+namespace HLKDotNetCore.ConsoleApp.DapperExamples
 {
 
     internal class DapperExample

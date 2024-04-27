@@ -1,4 +1,5 @@
-﻿using HLKDotNetCore.ConsoleApp;
+﻿using HLKDotNetCore.ConsoleApp.DapperExamples;
+using HLKDotNetCore.ConsoleApp.EFCoreExamples;
 
 
 DapperExample dapperExample = new DapperExample();

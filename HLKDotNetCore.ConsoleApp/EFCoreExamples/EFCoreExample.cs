@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using HLKDotNetCore.ConsoleApp.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HLKDotNetCore.ConsoleApp
+namespace HLKDotNetCore.ConsoleApp.EFCoreExamples
 {
     internal class EFCoreExample
     {
@@ -37,8 +38,8 @@ namespace HLKDotNetCore.ConsoleApp
 
         private void Edit(int blogID)
         {
-            var item=db.Blogs.FirstOrDefault(x => x.BlogID == blogID);
-            if(item is null)
+            var item = db.Blogs.FirstOrDefault(x => x.BlogID == blogID);
+            if (item is null)
             {
                 Console.WriteLine("No Data Found.");
                 return;
