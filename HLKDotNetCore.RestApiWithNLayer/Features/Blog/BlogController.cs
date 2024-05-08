@@ -1,84 +1,78 @@
-﻿using HLKDotNetCore.RestApi.DataBase;
-using HLKDotNetCore.RestApi.Models;
+﻿using HLKDotNetCore.RestApiWithNLayer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace HLKDotNetCore.RestApi.Controllers
+namespace HLKDotNetCore.RestApiWithNLayer.Features.Blog
 {
     [Route("api/[controller]")]
     [ApiController]
     public class BlogController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly BL_Blog _blBlog;
         public BlogController()
         {
-            _context = new AppDbContext();
+            _blBlog = new BL_Blog();
         }
-        
         [HttpGet]
         public IActionResult Read()
         {
-            var list=_context.Blogs.ToList();
+            var list = _blBlog.GetBlogs();
             return Ok(list);
         }
         [HttpGet("{id}")]
         public IActionResult Edit(int id)
         {
-            var list = _context.Blogs.FirstOrDefault(x => x.BlogID == id);
-            if(list is null)
+            var list = _blBlog.GetBlog(id);
+            if (list is null)
             {
                 return NotFound("no data found.");
             }
             return Ok(list);
         }
         [HttpPost]
-        public IActionResult Create(BlogModel model)
+        public IActionResult Create(BlogModel reqModel)
         {
-            _context.Blogs.Add(model);
-            int result=_context.SaveChanges();
+            int result = _blBlog.CreateBlog(reqModel);
 
             string message = result > 0 ? "Insert successful" : "Insert failed";
             return Ok(message);
         }
         [HttpPut("{id}")]
-        public IActionResult Update(int id, BlogModel model)
+        public IActionResult Update(int id, BlogModel blog)
         {
-            var item = _context.Blogs.FirstOrDefault(x => x.BlogID == id);
+            var item = _blBlog.GetBlog(id);
             if (item is null)
             {
                 return NotFound("no data found.");
             }
-            item.BlogTitle = model.BlogTitle;
-            item.BlogAuthor = model.BlogAuthor;
-            item.BlogContent = model.BlogContent;
 
-            int result = _context.SaveChanges();
+            int result = _blBlog.UpdateBlog(id, blog);
 
             string message = result > 0 ? "Update successful" : "Update failed";
             return Ok(message);
         }
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, BlogModel model)
+        public IActionResult Patch(int id, BlogModel blog)
         {
-            var item = _context.Blogs.FirstOrDefault(x => x.BlogID == id);
+            var item = _blBlog.GetBlog(id);
             if (item is null)
             {
                 return NotFound("no data found.");
             }
-            if (!string.IsNullOrEmpty(model.BlogTitle))
+            if (!string.IsNullOrEmpty(blog.BlogTitle))
             {
-                item.BlogTitle = model.BlogTitle;
+                item.BlogTitle = blog.BlogTitle;
             }
-            if (!string.IsNullOrEmpty(model.BlogAuthor))
+            if (!string.IsNullOrEmpty(blog.BlogAuthor))
             {
-                item.BlogAuthor = model.BlogAuthor;
+                item.BlogAuthor = blog.BlogAuthor;
             }
-            if (!string.IsNullOrEmpty(model.BlogContent))
+            if (!string.IsNullOrEmpty(blog.BlogContent))
             {
-                item.BlogContent = model.BlogContent;
+                item.BlogContent = blog.BlogContent;
             }
-            int result = _context.SaveChanges();
+            int result = _blBlog.PatchBlog(id, blog);
 
             string message = result > 0 ? "Update successful" : "Update failed";
             return Ok(message);
@@ -86,13 +80,12 @@ namespace HLKDotNetCore.RestApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var item = _context.Blogs.Find(id);
+            var item = _blBlog.GetBlog(id);
             if (item is null)
             {
                 return NotFound("no data found.");
             }
-            _context.Blogs.Remove(item);
-            int result = _context.SaveChanges();
+            int result = _blBlog.DeleteBlog(id);
             string message = result > 0 ? "Deleting successful" : "Deleting failed";
             return Ok(message);
         }

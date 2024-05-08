@@ -12,7 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.RestApi", "HLKDotNetCore.RestApi\HLKDotNetCore.RestApi.csproj", "{5DC5FA50-4960-44E9-81DA-A800FAA13AF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.Shared", "HLKDotNetCore.Shared\HLKDotNetCore.Shared.csproj", "{98C7B683-9BE2-43CE-BDC9-A7E2CFC3B0E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.Shared", "HLKDotNetCore.Shared\HLKDotNetCore.Shared.csproj", "{98C7B683-9BE2-43CE-BDC9-A7E2CFC3B0E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.RestApiWithNLayer", "HLKDotNetCore.RestApiWithNLayer\HLKDotNetCore.RestApiWithNLayer.csproj", "{312261C3-616E-4DD9-BA27-43CEE1E5DD33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{98C7B683-9BE2-43CE-BDC9-A7E2CFC3B0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98C7B683-9BE2-43CE-BDC9-A7E2CFC3B0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98C7B683-9BE2-43CE-BDC9-A7E2CFC3B0E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{312261C3-616E-4DD9-BA27-43CEE1E5DD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{312261C3-616E-4DD9-BA27-43CEE1E5DD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312261C3-616E-4DD9-BA27-43CEE1E5DD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{312261C3-616E-4DD9-BA27-43CEE1E5DD33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
