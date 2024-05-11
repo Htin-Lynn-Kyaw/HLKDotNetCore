@@ -1,5 +1,4 @@
 ﻿using HLKDotNetCore.RestApiWithNLayer.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -20,7 +19,7 @@ namespace HLKDotNetCore.RestApiWithNLayer.Features.Blog
         {
             string jsonStr = await System.IO.File.ReadAllTextAsync("data.json");
             var item = JsonConvert.DeserializeObject<DreamDictionary>(jsonStr);
-            return item;
+            return item!;
         }
 
         [HttpGet("getBlogHeaderData")]
@@ -37,6 +36,10 @@ namespace HLKDotNetCore.RestApiWithNLayer.Features.Blog
             {
                 ID = dict[burmeseChar];
             }
+            else
+            {
+                return NotFound("Input invaild.");
+            }
             var item = await GetDreamDictionary();
             return Ok(item.BlogDetail.Where(x => x.BlogId == ID));
         }
@@ -47,6 +50,10 @@ namespace HLKDotNetCore.RestApiWithNLayer.Features.Blog
             if (dict.ContainsKey(burmeseChar))
             {
                 ID = dict[burmeseChar];
+            }
+            else
+            {
+                return NotFound("Input invaild.");
             }
             var item = await GetDreamDictionary();
             return Ok(item.BlogDetail.FirstOrDefault(x => x.BlogId == ID && x.BlogDetailId == detailID));

@@ -14,7 +14,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.RestApi", "HL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.Shared", "HLKDotNetCore.Shared\HLKDotNetCore.Shared.csproj", "{98C7B683-9BE2-43CE-BDC9-A7E2CFC3B0E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.RestApiWithNLayer", "HLKDotNetCore.RestApiWithNLayer\HLKDotNetCore.RestApiWithNLayer.csproj", "{312261C3-616E-4DD9-BA27-43CEE1E5DD33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.RestApiWithNLayer", "HLKDotNetCore.RestApiWithNLayer\HLKDotNetCore.RestApiWithNLayer.csproj", "{312261C3-616E-4DD9-BA27-43CEE1E5DD33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.ConsoleAppHttpCiient", "HLKDotNetCore.ConsoleAppHttpCiient\HLKDotNetCore.ConsoleAppHttpCiient.csproj", "{BC1FFFAF-B713-41AE-943C-F53426BB997D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.ConsoleAppRestClient", "HLKDotNetCoreConsoleAppRestClient\HLKDotNetCore.ConsoleAppRestClient.csproj", "{5A2893CC-A55A-4A75-88B3-F5FF57216D73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +42,14 @@ Global
 		{312261C3-616E-4DD9-BA27-43CEE1E5DD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{312261C3-616E-4DD9-BA27-43CEE1E5DD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{312261C3-616E-4DD9-BA27-43CEE1E5DD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC1FFFAF-B713-41AE-943C-F53426BB997D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1FFFAF-B713-41AE-943C-F53426BB997D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1FFFAF-B713-41AE-943C-F53426BB997D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1FFFAF-B713-41AE-943C-F53426BB997D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2893CC-A55A-4A75-88B3-F5FF57216D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2893CC-A55A-4A75-88B3-F5FF57216D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2893CC-A55A-4A75-88B3-F5FF57216D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2893CC-A55A-4A75-88B3-F5FF57216D73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
