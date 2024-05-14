@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.RestApiWithNL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.ConsoleAppHttpCiient", "HLKDotNetCore.ConsoleAppHttpCiient\HLKDotNetCore.ConsoleAppHttpCiient.csproj", "{BC1FFFAF-B713-41AE-943C-F53426BB997D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.ConsoleAppRestClient", "HLKDotNetCoreConsoleAppRestClient\HLKDotNetCore.ConsoleAppRestClient.csproj", "{5A2893CC-A55A-4A75-88B3-F5FF57216D73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.ConsoleAppRestClient", "HLKDotNetCoreConsoleAppRestClient\HLKDotNetCore.ConsoleAppRestClient.csproj", "{5A2893CC-A55A-4A75-88B3-F5FF57216D73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.PizzaApi", "HLKDotNetCore.PizzaApi\HLKDotNetCore.PizzaApi.csproj", "{8C13251F-C60D-4EC6-A752-64CEAB968541}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{5A2893CC-A55A-4A75-88B3-F5FF57216D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A2893CC-A55A-4A75-88B3-F5FF57216D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A2893CC-A55A-4A75-88B3-F5FF57216D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C13251F-C60D-4EC6-A752-64CEAB968541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C13251F-C60D-4EC6-A752-64CEAB968541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C13251F-C60D-4EC6-A752-64CEAB968541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C13251F-C60D-4EC6-A752-64CEAB968541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

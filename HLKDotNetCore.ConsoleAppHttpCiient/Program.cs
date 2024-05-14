@@ -1,9 +1,9 @@
 ﻿using HLKDotNetCore.ConsoleAppHttpCiient;
 
-HttpClientExample httpClientExample = new HttpClientExample();
-//httpClientExample.ReadAsync().Wait();
-httpClientExample.RunAsync().Wait();
-Console.ReadLine();
+//HttpClientExample httpClientExample = new HttpClientExample();
+////httpClientExample.ReadAsync().Wait();
+//await httpClientExample.RunAsync();
+//Console.ReadLine();
 
 
 
