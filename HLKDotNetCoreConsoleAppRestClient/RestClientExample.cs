@@ -17,11 +17,11 @@ namespace HLKDotNetCore.ConsoleAppRestClient
         public async Task RunAsync()
         {
             //await ReadAsync();
-            //await EditAsync(1);
+            await DeleteAsync(1);
             //await UpdateAsync(1, "Title 1", "author 2", "content 3");
             //await EditAsync(1);
 
-            await PatchAsync(1, title: "qwer" ,string.Empty,string.Empty);
+            //await PatchAsync(1, title: "qwer" ,string.Empty,string.Empty);
             //await EditAsync(1);
 
         }
@@ -46,7 +46,7 @@ namespace HLKDotNetCore.ConsoleAppRestClient
         }
         public async Task EditAsync(int id)
         {
-            RestRequest restRequest = new RestRequest(_endPoint, Method.Get);
+            RestRequest restRequest = new RestRequest($"{_endPoint}/{id}", Method.Get);
             var response = await _httpClient.GetAsync(restRequest);
             string jasonStr = response.Content!;
             if (response.IsSuccessStatusCode)
@@ -65,7 +65,7 @@ namespace HLKDotNetCore.ConsoleAppRestClient
 
         public async Task DeleteAsync(int id)
         {
-            RestRequest restRequest = new RestRequest(_endPoint, Method.Get);
+            RestRequest restRequest = new RestRequest($"{_endPoint}/{id}", Method.Delete);
             var response = await _httpClient.GetAsync(restRequest);
             string jasonStr = response.Content!;
             if (response.IsSuccessStatusCode)

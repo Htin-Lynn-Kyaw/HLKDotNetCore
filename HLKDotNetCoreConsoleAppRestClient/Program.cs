@@ -3,4 +3,6 @@
 Console.WriteLine("Hello, World!");
 
 RestClientExample restClientExample = new RestClientExample();
-restClientExample.ReadAsync().Wait();
+await restClientExample.RunAsync();
+
+Console.ReadKey();

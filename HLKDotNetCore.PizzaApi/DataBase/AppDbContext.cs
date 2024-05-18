@@ -26,7 +26,7 @@ namespace HLKDotNetCore.PizzaApi.DataBase
     {
         [Key]
         public int PizzaID { get; set; }
-        public string Pizza { get; set; }
+        public string? Pizza { get; set; }
         public decimal Price { get; set; }
     }
 
@@ -35,7 +35,7 @@ namespace HLKDotNetCore.PizzaApi.DataBase
     {
         [Key]
         public int PizzaExtraID { get; set; }
-        public string PizzaExtra { get; set; }
+        public string? PizzaExtra { get; set; }
         public decimal Price { get; set; }
     }
     [Table("Tbl_PizzaOrder")]
@@ -43,7 +43,7 @@ namespace HLKDotNetCore.PizzaApi.DataBase
     {
         [Key]
         public int PizzaOrderID { get; set; }
-        public string PizzaOrderInvoiceNo { get; set; }
+        public string? PizzaOrderInvoiceNo { get; set; }
         public int PizzaID { get; set; }
         public decimal Total { get; set; }
     }
@@ -51,19 +51,41 @@ namespace HLKDotNetCore.PizzaApi.DataBase
     public class PizzaOrderDetail
     {
         [Key]
-        public int PizzaDetailOrderID { get; set; }
-        public string PizzaOrderInvoiceNo { get; set; }
+        public int PizzaOrderDetailID { get; set; }
+        public string? PizzaOrderInvoiceNo { get; set; }
         public int PizzaExtraID { get; set; }
     }
     public class OrderRequest
     {
         public int PizzaID { get; set; }
-        public int[] Extras { get; set; }
+        public int[]? Extras { get; set; }
     }
     public class OrderResponse
     {
-        public string InvoiceNo { get; set; }
-        public string Message { get; set; }
+        public string? InvoiceNo { get; set; }
+        public string? Message { get; set; }
         public decimal Total { get; set; }
+    }
+    public class PizzaOrderModel
+    {
+        public int PizzaOrderID { get; set; }
+        public int PizzaID { get; set; }
+        public string? PizzaOrderInvoiceNo { get; set; }
+        public string? Pizza { get; set; }
+        public decimal Price { get; set; }
+        public decimal Total { get; set; }
+    }
+    public class PizzaOrderDetailModel
+    {
+        public int PizzaOrderDetailID { get; set; }
+        public string? PizzaOrderInvoiceNo { get; set; }
+        public int PizzaExtraID { get; set; }
+        public string? PizzaExtra { get; set; }
+        public decimal Price { get; set; }
+    }
+    public class PizzaOrderHeaderAndDetail
+    {
+        public PizzaOrderModel? pom { get; set; }
+        public List<PizzaOrderDetailModel>? podm { get; set; }
     }
 }
