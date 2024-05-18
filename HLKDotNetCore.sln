@@ -22,7 +22,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.ConsoleAppRes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.PizzaApi", "HLKDotNetCore.PizzaApi\HLKDotNetCore.PizzaApi.csproj", "{8C13251F-C60D-4EC6-A752-64CEAB968541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.ConsoleAppRefit", "HLKDotNetCore.ConsoleAppRefit\HLKDotNetCore.ConsoleAppRefit.csproj", "{30DAC260-ACA6-408A-B785-7AC0A7EECA29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.ConsoleAppRefit", "HLKDotNetCore.ConsoleAppRefit\HLKDotNetCore.ConsoleAppRefit.csproj", "{30DAC260-ACA6-408A-B785-7AC0A7EECA29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.WinFormsApp", "HLKDotNetCore.WinFormsApp\HLKDotNetCore.WinFormsApp.csproj", "{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{30DAC260-ACA6-408A-B785-7AC0A7EECA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30DAC260-ACA6-408A-B785-7AC0A7EECA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30DAC260-ACA6-408A-B785-7AC0A7EECA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
