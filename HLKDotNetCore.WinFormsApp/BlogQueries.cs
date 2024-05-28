@@ -16,5 +16,7 @@ namespace HLKDotNetCore.WinFormsApp
                (@BlogTitle,
                @BlogAuthor,
                @BlogContent)";
+
+        public static string BlogSelectAll { get; } = @"select * from tbl_blog";
     }
 }
