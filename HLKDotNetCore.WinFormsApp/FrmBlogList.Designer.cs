@@ -33,6 +33,8 @@
             colTitle = new DataGridViewTextBoxColumn();
             colAuthor = new DataGridViewTextBoxColumn();
             colContent = new DataGridViewTextBoxColumn();
+            colEdit = new DataGridViewButtonColumn();
+            colDelete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)blogGridView).BeginInit();
             SuspendLayout();
             // 
@@ -42,7 +44,7 @@
             blogGridView.AllowUserToDeleteRows = false;
             blogGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             blogGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            blogGridView.Columns.AddRange(new DataGridViewColumn[] { colID, colTitle, colAuthor, colContent });
+            blogGridView.Columns.AddRange(new DataGridViewColumn[] { colID, colTitle, colAuthor, colContent, colEdit, colDelete });
             blogGridView.Dock = DockStyle.Fill;
             blogGridView.Location = new Point(0, 0);
             blogGridView.Name = "blogGridView";
@@ -51,6 +53,7 @@
             blogGridView.RowTemplate.Height = 29;
             blogGridView.Size = new Size(800, 450);
             blogGridView.TabIndex = 0;
+            blogGridView.CellContentClick += blogGridView_CellContentClick;
             // 
             // colID
             // 
@@ -85,6 +88,28 @@
             colContent.Name = "colContent";
             colContent.ReadOnly = true;
             // 
+            // colEdit
+            // 
+            colEdit.HeaderText = "";
+            colEdit.MinimumWidth = 6;
+            colEdit.Name = "colEdit";
+            colEdit.ReadOnly = true;
+            colEdit.Resizable = DataGridViewTriState.True;
+            colEdit.SortMode = DataGridViewColumnSortMode.Automatic;
+            colEdit.Text = "Edit";
+            colEdit.UseColumnTextForButtonValue = true;
+            // 
+            // colDelete
+            // 
+            colDelete.HeaderText = "";
+            colDelete.MinimumWidth = 6;
+            colDelete.Name = "colDelete";
+            colDelete.ReadOnly = true;
+            colDelete.Resizable = DataGridViewTriState.True;
+            colDelete.SortMode = DataGridViewColumnSortMode.Automatic;
+            colDelete.Text = "Delete";
+            colDelete.UseColumnTextForButtonValue = true;
+            // 
             // FrmBlogList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -105,5 +130,7 @@
         private DataGridViewTextBoxColumn colTitle;
         private DataGridViewTextBoxColumn colAuthor;
         private DataGridViewTextBoxColumn colContent;
+        private DataGridViewButtonColumn colEdit;
+        private DataGridViewButtonColumn colDelete;
     }
 }
