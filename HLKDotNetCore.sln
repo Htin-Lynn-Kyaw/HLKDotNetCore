@@ -24,7 +24,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.PizzaApi", "H
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.ConsoleAppRefit", "HLKDotNetCore.ConsoleAppRefit\HLKDotNetCore.ConsoleAppRefit.csproj", "{30DAC260-ACA6-408A-B785-7AC0A7EECA29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.WinFormsApp", "HLKDotNetCore.WinFormsApp\HLKDotNetCore.WinFormsApp.csproj", "{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.WinFormsApp", "HLKDotNetCore.WinFormsApp\HLKDotNetCore.WinFormsApp.csproj", "{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.NLayer.UI", "HLKDotNetCore.NLayer.UI\HLKDotNetCore.NLayer.UI.csproj", "{6C5D7184-3117-43C8-8DDC-27DDEB1BC0DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.NLayer.DataAccess", "HLKDotNetCore.NLayer.DataAccess\HLKDotNetCore.NLayer.DataAccess.csproj", "{821F9C0C-1D21-49B0-B55F-2C494B26EB94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.NLayer.BusinessLogic", "HLKDotNetCore.NLayer.BusinessLogic\HLKDotNetCore.NLayer.BusinessLogic.csproj", "{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +74,18 @@ Global
 		{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5D7184-3117-43C8-8DDC-27DDEB1BC0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5D7184-3117-43C8-8DDC-27DDEB1BC0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5D7184-3117-43C8-8DDC-27DDEB1BC0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5D7184-3117-43C8-8DDC-27DDEB1BC0DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{821F9C0C-1D21-49B0-B55F-2C494B26EB94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821F9C0C-1D21-49B0-B55F-2C494B26EB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821F9C0C-1D21-49B0-B55F-2C494B26EB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821F9C0C-1D21-49B0-B55F-2C494B26EB94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
