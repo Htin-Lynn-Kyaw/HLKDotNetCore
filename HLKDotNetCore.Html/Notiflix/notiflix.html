@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notiflix@3.2.7/src/notiflix.min.css">
+</head>
+
+<body>
+
+    <table id="tableID">
+        <tr>
+          <td>Row 1, Cell 1</td>
+          <td>Row 1, Cell 2</td>
+        </tr>
+        <tr>
+          <td>Row 2, Cell 1</td>
+          <td>Row 2, Cell 2</td>
+        </tr>
+    </table>
+    <button type="button" onclick="table()">Click Me for table</button><br>
+    <button type="button" onclick="noti()">Click Me</button><br>
+    <button type="button" onclick="load()">Click Me</button><br>
+
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.7/dist/notiflix-aio-3.2.7.min.js" 
+    integrity="sha256-G6sj3uSY1Rtnyomq54b5wiwwe2+A5Zym254DHutrXM4=" crossorigin="anonymous"></script>
+    <script>
+        function noti()
+        {
+            Notiflix.Notify.success('You clicked!!');
+        }
+        function load(){
+            Notiflix.Loading.hourglass();
+            setInterval(() => {
+                Notiflix.Loading.remove();
+            }, 2000);
+        }
+        function table(){
+            Notiflix.Block.hourglass('#tableID');
+            setInterval(() => {
+                Notiflix.Block.remove('#tableID');
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>
