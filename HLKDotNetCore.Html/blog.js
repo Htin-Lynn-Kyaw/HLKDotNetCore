@@ -14,7 +14,7 @@ function EditBlog(id) {
 
     if (item.length == 0) {
         console.log("no data found");
-        Message("no data found");
+        Message("no data found", "error");
         return;
     }
     //return item[0];
@@ -37,7 +37,7 @@ function CreateBlog(title, author, content) {
 
     clearControls();
 
-    Message("Saving successful.");
+    Message("Saving successful.", "success");
 }
 
 function UpdateBlog(id, title, author, content) {
@@ -63,36 +63,58 @@ function UpdateBlog(id, title, author, content) {
 
     clearControls();
 
-    Message("Update successful.");
+    Message("Update successful.", "success");
 }
 
 function DeleteBlog(id) {
-    let result = confirm("Are you sure?");
-    if(!result) return;
+    confirmMessage("Are you sure?").then(
+        function (value) {
+            let lst = GetBlogs();
 
-    let lst = GetBlogs();
+            const item = lst.filter(x => x.id === id);
 
-    const item = lst.filter(x => x.id === id);
+            if (item.length == 0) {
+                console.log("no data found");
+                return;
+            }
 
-    if (item.length == 0) {
-        console.log("no data found");
-        return;
-    }
+            lst = lst.filter(x => x.id !== id);
 
-    lst = lst.filter(x => x.id !== id);
+            const jsonBlog = JSON.stringify(lst);
+            localStorage.setItem(tblBlog, jsonBlog);
 
-    const jsonBlog = JSON.stringify(lst);
-    localStorage.setItem(tblBlog, jsonBlog);
+            Message("Delete successful", "success");
 
-    Message("Delete successful");
-
-    GetBlogTabel();
-}
-
-function uuidv4() {
-    return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
-        (+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
+            GetBlogTabel();
+        }
     );
+    /*Swal.fire({
+        title: "Comfirm",
+        text: "Are you sure?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes"
+    }).then((result) => {
+        if (!result.isConfirmed) return;
+        let lst = GetBlogs();
+
+        const item = lst.filter(x => x.id === id);
+
+        if (item.length == 0) {
+            console.log("no data found");
+            return;
+        }
+
+        lst = lst.filter(x => x.id !== id);
+
+        const jsonBlog = JSON.stringify(lst);
+        localStorage.setItem(tblBlog, jsonBlog);
+
+        Message("Delete successful", "success");
+
+        GetBlogTabel();
+
+    });*/
 }
 
 function GetBlogs() {
@@ -103,10 +125,6 @@ function GetBlogs() {
         lst = JSON.parse(blogs);
     }
     return lst;
-}
-
-function Message(message) {
-    alert(message);
 }
 
 function clearControls() {
@@ -134,7 +152,7 @@ $('#btnSave').click(function () {
     } else {
         UpdateBlog(blogID, title, author, content);
         blogID = null;
-    }  
+    }
 
     GetBlogTabel();
 })
