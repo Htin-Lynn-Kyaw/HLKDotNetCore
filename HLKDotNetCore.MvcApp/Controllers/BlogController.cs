@@ -31,6 +31,26 @@ namespace HLKDotNetCore.MvcApp.Controllers
             return View();
         }
 
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var model = await _context.Blogs.FirstOrDefaultAsync(x => x.BlogID == id);
+            var response = new ResponseModel();
+
+            if (model is null)
+            {
+                response.IsSucceed = false;
+                response.Message = "ID " + id + "not found!";
+                return Json(response);
+            }
+
+            _context.Blogs.Remove(model);
+            int result = _context.SaveChanges();
+
+            response.Message = result > 0 ? "Delete successful." : "Delete failed.";
+            response.IsSucceed = result > 0;
+            return Json(response);
+        }
+
         [HttpPost]
         public IActionResult Create(BlogModel blog)
         {
@@ -44,6 +64,30 @@ namespace HLKDotNetCore.MvcApp.Controllers
                         Message = message
                     }
                 );
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateAsync(int id,BlogModel blog)
+        {
+            //_context.Blogs.Add(blog);
+            var model = await _context.Blogs.FirstOrDefaultAsync(x => x.BlogID == id);
+            var response = new ResponseModel();
+
+            if(model is null)
+            {
+                response.IsSucceed = false;
+                response.Message = "ID " + id + "not found!";
+                return Json(response);
+            }
+
+            model.BlogTitle = blog.BlogTitle;
+            model.BlogAuthor = blog.BlogAuthor;
+            model.BlogContent = blog.BlogContent;
+            int result = _context.SaveChanges();
+
+            response.Message = result > 0 ? "Update successful." : "Update failed.";
+            response.IsSucceed = result > 0;
+            return Json(response);
         }
     }
 }
