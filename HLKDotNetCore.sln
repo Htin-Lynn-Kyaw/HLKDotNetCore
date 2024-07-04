@@ -26,11 +26,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.ConsoleAppRef
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.WinFormsApp", "HLKDotNetCore.WinFormsApp\HLKDotNetCore.WinFormsApp.csproj", "{BC4564CB-AF68-4607-B1ED-5E510A56EBEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.NLayer.UI", "HLKDotNetCore.NLayer.UI\HLKDotNetCore.NLayer.UI.csproj", "{6C5D7184-3117-43C8-8DDC-27DDEB1BC0DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.NLayer.UI", "HLKDotNetCore.NLayer.UI\HLKDotNetCore.NLayer.UI.csproj", "{6C5D7184-3117-43C8-8DDC-27DDEB1BC0DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.NLayer.DataAccess", "HLKDotNetCore.NLayer.DataAccess\HLKDotNetCore.NLayer.DataAccess.csproj", "{821F9C0C-1D21-49B0-B55F-2C494B26EB94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.NLayer.DataAccess", "HLKDotNetCore.NLayer.DataAccess\HLKDotNetCore.NLayer.DataAccess.csproj", "{821F9C0C-1D21-49B0-B55F-2C494B26EB94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.NLayer.BusinessLogic", "HLKDotNetCore.NLayer.BusinessLogic\HLKDotNetCore.NLayer.BusinessLogic.csproj", "{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HLKDotNetCore.NLayer.BusinessLogic", "HLKDotNetCore.NLayer.BusinessLogic\HLKDotNetCore.NLayer.BusinessLogic.csproj", "{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLKDotNetCore.MvcApp", "HLKDotNetCore.MvcApp\HLKDotNetCore.MvcApp.csproj", "{60B7ECD2-64ED-45C6-84DD-611C3B6BB3EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +88,10 @@ Global
 		{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15AD6DD1-8BF7-44ED-A54A-0D739D13975C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B7ECD2-64ED-45C6-84DD-611C3B6BB3EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B7ECD2-64ED-45C6-84DD-611C3B6BB3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B7ECD2-64ED-45C6-84DD-611C3B6BB3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B7ECD2-64ED-45C6-84DD-611C3B6BB3EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
